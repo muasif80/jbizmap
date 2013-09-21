@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<extension version="3.0.0" type="component" method="upgrade">
+	<name>jbizmap</name>
+	<author>Mayotitech</author>
+	<authorUrl>www.mayotitech.com</authorUrl>
+	<authorUrl>mayotitech@gmail.com</authorUrl>
+	<creationDate>2013-08-31</creationDate>
+	<copyright>2013 Mayotitech</copyright>
+	<license>gpl 3.0</license>
+	<version>1.0.0</version>
+	<description>Its a component for displaying businesses on a map.</description>
+	
+	<install>
+		<sql>
+			<file charset="utf-8" driver="mysql">install.mysql.sql</file>
+		</sql>
+	</install>
+	
+	<uninstall>
+		<sql>
+			<file charset="utf-8" driver="mysql">uninstall.mysql.sql</file>
+		</sql>
+	</uninstall>
+	
+	<files folder="site">
+		<folder>controllers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>assets</folder>
+		<folder>helpers</folder>
+		<folder>tables</folder>
+		<filename>index.html</filename>
+		<filename>router.php</filename>
+		<filename>jbizmap.php</filename>
+	</files>
+	
+	<scriptfile>install.php</scriptfile>
+	
+	<administration>
+		<menus>
+			<menu>JBizMap</menu>
+		</menus>
+	
+		<files  folder="admin">
+			<folder>controllers</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+			<folder>helpers</folder>
+			<filename>index.html</filename>
+			<filename>install.mysql.sql</filename>
+			<filename>uninstall.mysql.sql</filename>
+			<filename>jbizmap.php</filename>
+		</files>
+	</administration>	
+	
+	
+	
+</extension>
