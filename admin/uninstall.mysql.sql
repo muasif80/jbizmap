@@ -1,1 +1,1 @@
-drop table jbm_test;
+DROP TABLE IF EXISTS `jm311_jbizmap_biz`;
