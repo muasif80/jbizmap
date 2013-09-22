@@ -5,6 +5,10 @@
 <script type="text/javascript">
 var markerLat = '<?php echo $biz->bizloclat; ?>';
 var markerLng = '<?php echo $biz->bizloclng; ?>';
+var markerBizName = '<?php echo $biz->bizname; ?>';
+var markerBizAddress = '<?php echo $biz->bizaddress; ?>';
+var markerBizPhone = '<?php echo $biz->bizphone; ?>';
+var markerContent = markerBizName + "<br />" + markerBizAddress + "<br />" + markerBizPhone;
 
 function initialize() {
 
@@ -26,6 +30,14 @@ function initialize() {
       position: pos,
       map: map
   });
+
+  var infowindow = new google.maps.InfoWindow(); 
+  google.maps.event.addListener(marker, 'click', (function(marker) {
+      return function() {
+          infowindow.setContent(markerContent);
+          infowindow.open(map, marker);
+      }
+  })(marker));
   
 }
 
@@ -46,39 +58,47 @@ window.onload = loadScript;
 
 <h2><?php echo $biz->bizname; ?></h2>
 
-<table class="table table-striped" style="width: 600px;">
+<table class="table">
 	<tr>
-		<th>Contact Name</th>
-		<td><?php echo $biz->bizcontactname; ?></td>
+		<td style="width: 40%;">
+			<table class="table table-striped" style="width: 100%;">
+				<tr>
+					<th>Contact Name</th>
+					<td><?php echo $biz->bizcontactname; ?></td>
+				</tr>
+				<tr>
+					<th>Location</th>
+					<td><?php echo $biz->bizloclat . ", " . $biz->bizloclng; ?></td>
+				</tr>
+				<tr>
+					<th>Address</th>
+					<td><?php echo $biz->bizaddress; ?></td>
+				</tr>
+				<tr>
+					<th>Phone</th>
+					<td><?php echo $biz->bizphone; ?></td>
+				</tr>
+				<tr>
+					<th>Email</th>
+					<td><?php echo $biz->bizemail; ?></td>
+				</tr>
+				<tr>
+					<th>Category</th>
+					<td><?php echo $biz->bizcategory; ?></td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td><?php echo $biz->bizdescription; ?></td>
+				</tr>
+			</table>
+		</td>
+		<td style="width: 60%;">
+			<div class="map-wrapper" style="width: 100%; height: 400px; border: solid thick #CCDDCC;">
+				<div id="map-canvas" style="width: 100%; height: 100%;">
+				</div>
+			</div>
+		</td>
 	</tr>
-	<tr>
-		<th>Location</th>
-		<td><?php echo $biz->bizloclat . ", " . $biz->bizloclng; ?></td>
-	</tr>
-	<tr>
-		<th>Address</th>
-		<td><?php echo $biz->bizaddress; ?></td>
-	</tr>
-	<tr>
-		<th>Phone</th>
-		<td><?php echo $biz->bizphone; ?></td>
-	</tr>
-	<tr>
-		<th>Email</th>
-		<td><?php echo $biz->bizemail; ?></td>
-	</tr>
-	<tr>
-		<th>Category</th>
-		<td><?php echo $biz->bizcategory; ?></td>
-	</tr>
-	<tr>
-		<th>Description</th>
-		<td><?php echo $biz->bizdescription; ?></td>
-	</tr>
-	
 </table>
 
-<div class="map-wrapper" style="width: 100%; height: 400px; border: solid thick #CCDDCC;">
-	<div id="map-canvas" style="width: 100%; height: 100%;">
-	</div>
-</div>
+
