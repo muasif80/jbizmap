@@ -53,7 +53,7 @@ Joomla.submitbutton = function(task){
 						</td>
 	
 						<td>
-							<a href="<?php echo JRoute::_('index.php?option=com_jbizmap&view=biz&task=bizdetail&id='.(int) $biz->biz_id); ?>">
+							<a href="<?php echo JRoute::_('index.php?option=com_jbizmap&task=bizdetail&id='.(int) $biz->biz_id); ?>">
 								<?php echo $biz->bizname; ?>
 							</a>
 							

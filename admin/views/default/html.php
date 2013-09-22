@@ -5,7 +5,8 @@ class JbizmapViewsDefaultHtml extends JViewHtml{
 	
 	var $sortColumn = null;
 	var $sortDirection = null;
-	 
+
+	var $id = null;
 	
 	public function render(){
 		// I want to display a list of items here.
@@ -27,6 +28,8 @@ class JbizmapViewsDefaultHtml extends JViewHtml{
 		
 		$this->sortColumn = $bizModel->get('sortCol');
 		$this->sortDirection = $bizModel->get('sortDir');
+		
+		$this->id = JFactory::getApplication()->input->get("id");
 		
 // 		$this->pagination->
 		

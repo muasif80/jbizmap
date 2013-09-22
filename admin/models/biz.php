@@ -23,13 +23,29 @@
 			$db = JFactory::getDBO();
 			$query = $db->getQuery(TRUE);
 		
-			$query->select('b.biz_id, b.bizname, b.bizloclat, b.bizloclng, b.bizaddress, b.bizcontactname, b.bizphone');
+			$query->select('b.biz_id, b.bizname, b.bizloclat, b.bizloclng, b.bizaddress, b.bizcontactname, b.bizphone, b.bizemail, b.bizcategory, b.bizwebsite, b.bizdescription');
 			$query->from('#__jbizmap_biz as b');
 			$query->order("b." . $this->sortCol . " " . $this->sortDir);
 		
 			
 			return $query;
 		}
+		
+		/**
+		 * Builds the filter for the query
+		 * @param    object  Query object
+		 * @return   object  Query object
+		 *
+		 */
+		protected function _buildWhere(&$query){
+		
+			if(is_numeric($this->_biz_id)){
+				$query->where('b.biz_id = ' . (int) $this->_biz_id);
+			}
+			
+			return $query;
+		}
+		
 		
 		public function getItem()
 		{
