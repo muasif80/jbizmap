@@ -101,4 +101,9 @@ window.onload = loadScript;
 	</tr>
 </table>
 
+<?php $limitStart = isset($_REQUEST['limitstart']) ? $_REQUEST['limitstart'] : 0; ?>
+
+<a href="<?php echo JRoute::_('index.php?option=com_jbizmap&view=default&limitstart=' . $limitStart); ?>">Show List</a>
+
+
 

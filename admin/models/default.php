@@ -13,7 +13,7 @@ class JbizmapModelsDefault extends JModelBase
   protected $_db          = null;
   protected $id           = null;
   protected $limitstart   = 0;
-  protected $limit        = 15;
+  protected $limit        = 5;
   
   protected $sortCol = 'biz_id';
   protected $sortDir = 'asc';

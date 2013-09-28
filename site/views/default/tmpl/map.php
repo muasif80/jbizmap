@@ -15,11 +15,11 @@
 	} 
 	$markers1 .= "]";
 	
-	
+	/*
 	echo "<pre>";
 	var_dump($this->bizlist);
 	echo "</pre>";
-	
+	*/
 ?>
 
 <script type="text/javascript">
@@ -35,6 +35,12 @@ Joomla.submitbutton = function(task){
         
     } else if(task == 'showmap'){
     	jQuery('input[name=task]', jQuery('#adminForm')).val('showmap');
+        jQuery('input[name=controller]', jQuery('#adminForm')).val("display");
+        jQuery('input[name=view]', jQuery('#adminForm')).val("default");
+        Joomla.submitform(task);
+        
+    } else if(task == 'showlist'){
+    	jQuery('input[name=task]', jQuery('#adminForm')).val('default');
         jQuery('input[name=controller]', jQuery('#adminForm')).val("display");
         jQuery('input[name=view]', jQuery('#adminForm')).val("default");
         Joomla.submitform(task);
@@ -102,17 +108,28 @@ var markers = <?php echo $markers1; ?>;
 </script>
 
 
-<form action="index.php" method="post" id="adminForm" name="adminForm">
+<?php $limitStart = isset($_REQUEST['limitstart']) ? $_REQUEST['limitstart'] : 0; ?>
 
+<a href="<?php echo JRoute::_('index.php?option=com_jbizmap&view=default&limitstart=' . $limitStart); ?>">Show List</a>
+
+
+<form action="index.php" method="post" id="adminForm" name="adminForm">
+	<!-- input type="button" name="btnShowList" value="Show List" onclick="Joomla.submitbutton('showlist')" / -->
+	
 	<h2>Map: Locate the Business on Map</h2>
 	<div class="map-wrapper" style="width: 100%; height: 550px; border: solid thick #CCDDCC;">
 		<div id="map-canvas" style="width: 100%; height: 100%;">
 		</div>
 	</div>
 
+	
+	
+	<input type="hidden" name="limitstart" value="<?php echo isset($_REQUEST['limitstart']) ? $_REQUEST['limitstart'] : 0; ?>" />
+	
 	<input type="hidden" name="option" value="com_jbizmap" />
 	<input type="hidden" name="controller" value="" />
 	<input type="hidden" name="task" value="" />
 	<input type="hidden" name="view" value="default" />
 
+	
 </form>

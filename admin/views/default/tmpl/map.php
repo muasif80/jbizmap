@@ -39,6 +39,12 @@ Joomla.submitbutton = function(task){
         jQuery('input[name=view]', jQuery('#adminForm')).val("default");
         Joomla.submitform(task);
         
+    } else if(task == 'showlist'){
+    	jQuery('input[name=task]', jQuery('#adminForm')).val('default');
+        jQuery('input[name=controller]', jQuery('#adminForm')).val("display");
+        jQuery('input[name=view]', jQuery('#adminForm')).val("default");
+        Joomla.submitform(task);
+        
     } else Joomla.submitform(task);
     return false;
 };
@@ -109,10 +115,14 @@ var markers = <?php echo $markers1; ?>;
 		<div id="map-canvas" style="width: 100%; height: 100%;">
 		</div>
 	</div>
+	
+	<input type="button" name="btnShowList" value="Show List" onclick="Joomla.submitbutton('showlist')" />
 
 	<input type="hidden" name="option" value="com_jbizmap" />
 	<input type="hidden" name="controller" value="" />
 	<input type="hidden" name="task" value="" />
 	<input type="hidden" name="view" value="default" />
+	
+	<input type="hidden" name="limitstart" value="<?php echo isset($_REQUEST['limitstart']) ? $_REQUEST['limitstart'] : 0; ?>" />
 
 </form>

@@ -30,8 +30,15 @@ Joomla.submitbutton = function(task){
 //-->
 </script>
 
+<?php $limitStart = isset($_REQUEST['limitstart']) ? $_REQUEST['limitstart'] : 0; ?>
+
+
+
+	
 <form action="index.php" method="post" id="adminForm" name="adminForm">
 
+	<input type="button" name="btnShowMap" value="Show Map" onclick="Joomla.submitbutton('showmap')" />
+	
 	<table cellpadding="0" cellspacing="0" width="100%" class="table table-striped">
 		<thead>
 			<tr>
@@ -53,7 +60,7 @@ Joomla.submitbutton = function(task){
 						</td>
 	
 						<td>
-							<a href="<?php echo JRoute::_('index.php?option=com_jbizmap&view=biz&task=bizdetail&id='.(int) $biz->biz_id); ?>">
+							<a href="<?php echo JRoute::_('index.php?option=com_jbizmap&view=biz&task=bizdetail&id='.(int) $biz->biz_id . '&limitstart=' . $limitStart); ?>">
 								<?php echo $biz->bizname; ?>
 							</a>
 							
