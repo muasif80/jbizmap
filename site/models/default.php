@@ -32,7 +32,7 @@ class JbizmapModelsDefault extends JModelBase
   	$this->limitstart = JRequest::getVar('limitstart', $this->limitstart, '', 'int');
   	
   	$this->sortCol = JRequest::getVar('filter_order', $this->sortCol, '', 'string');
-  	$this->sortDir = JRequest::getVar('filter_order_dir', $this->sortDir, '', 'string');
+  	$this->sortDir = JRequest::getVar('filter_order_Dir', $this->sortDir, '', 'string');
   }
 
   public function store($data=null)

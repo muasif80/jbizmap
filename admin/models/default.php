@@ -31,8 +31,13 @@ class JbizmapModelsDefault extends JModelBase
   	$this->limit = $this->_app->getUserStateFromRequest('limit', 'limit', $this->limit, 'int');
   	$this->limitstart = JRequest::getVar('limitstart', $this->limitstart, '', 'int');
   	
+  	//echo "sortdir : " . JRequest::getVar('filter_order_Dir') . "<br />";
+  	//echo "sortdir : " . $_REQUEST['filter_order_Dir'] . "<br />";
+  	
   	$this->sortCol = JRequest::getVar('filter_order', $this->sortCol, '', 'string');
-  	$this->sortDir = JRequest::getVar('filter_order_dir', $this->sortDir, '', 'string');
+  	$this->sortDir = JRequest::getVar('filter_order_Dir', $this->sortDir, '', 'string');
+  	
+  	//echo "sortCol : " . $this->sortCol . ", sortDir : " . $this->sortDir . "<br />";
   }
 
   public function store($data=null)
