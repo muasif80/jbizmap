@@ -31,7 +31,7 @@
 		<folder>helpers</folder>
 		<folder>tables</folder>
 		<filename>index.html</filename>
-		<filename>router.php</filename>
+<!-- 		<filename>router.php</filename> -->
 		<filename>jbizmap.php</filename>
 	</files>
 	
