@@ -43,6 +43,7 @@ class JbizmapViewsDefaultHtml extends JViewHtml{
 		
 		JToolbarHelper::custom("showmap", "", "", "Show Map", false);
 		JToolbarHelper::addNew();
+		JToolbarHelper::custom("addbulk", "", "", "Add Bulk", false);
 		JToolbarHelper::deleteList("Are you sure you want to delete the selected items?");
 		
 		//JToolbarHelper::custom("Show Map", "", "", "Show Map");

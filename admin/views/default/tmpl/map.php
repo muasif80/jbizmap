@@ -15,11 +15,11 @@
 	} 
 	$markers1 .= "]";
 	
-	
+	/*
 	echo "<pre>";
 	var_dump($this->bizlist);
 	echo "</pre>";
-	
+	*/
 ?>
 
 <script type="text/javascript">

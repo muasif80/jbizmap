@@ -15,7 +15,13 @@ Joomla.submitbutton = function(task){
         jQuery('input[name=view]', jQuery('#adminForm')).val("default");
         Joomla.submitform(task);
         
-    }else if(task == 'remove'){
+    } else if(task == 'addbulk'){
+    	jQuery('input[name=task]', jQuery('#adminForm')).val('addbulk');
+        jQuery('input[name=controller]', jQuery('#adminForm')).val("addbulk");
+        jQuery('input[name=view]', jQuery('#adminForm')).val("addbulk");
+        Joomla.submitform(task);
+        
+    } else if(task == 'remove'){
     	jQuery('input[name=task]', jQuery('#adminForm')).val('remove');
         jQuery('input[name=controller]', jQuery('#adminForm')).val("delete");
         //jQuery('input[name=view]', jQuery('#adminForm')).val("default");
