@@ -135,7 +135,7 @@ class JbizmapModelsDefault extends JModelBase
   public function listItems()
   {
     $query = $this->_buildQuery();    
-    //$query = $this->_buildWhere($query);
+    $query = $this->_buildWhere($query);
     
 //     //setup the pagination
 //     $this->_pagination  = new JPagination($this->getTotal(), $this->limitstart, $this->limit);
@@ -214,6 +214,8 @@ class JbizmapModelsDefault extends JModelBase
     if ( empty ( $this->_total ) )
     {
       $query = $this->_buildQuery();
+      $query = $this->_buildWhere($query);
+      
       $this->_total = $this->_getListCount($query);
     }
     

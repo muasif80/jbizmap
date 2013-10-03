@@ -20,6 +20,11 @@
 				//echo "here";
 				$layoutName = $app->input->getWord("layout", "bizdetail");
 				//$this->id = $app->input->getInt("id");
+			}else if($task == 'filter_by_category'){
+				//echo "here";
+				//$category = $app->input->getWord("selected_category", "-1");
+				$layoutName = $app->input->getWord("layout", "default");
+				//$this->id = $app->input->getInt("id");
 			}else{
 				$layoutName = $app->input->getWord("layout", "default");
 			}

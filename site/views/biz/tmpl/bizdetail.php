@@ -54,6 +54,17 @@ window.onload = loadScript;
 
 </script>
 
+<div id="fb-root"></div>
+
+<script type="text/javascript">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=99907623122";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <?php $limitStart = isset($_REQUEST['limitstart']) ? $_REQUEST['limitstart'] : 0; ?>
 
 <a href="<?php echo JRoute::_('index.php?option=com_jbizmap&view=default&limitstart=' . $limitStart); ?>">Show List</a>
@@ -100,6 +111,17 @@ window.onload = loadScript;
 				<div id="map-canvas" style="width: 100%; height: 100%;">
 				</div>
 			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<?php 
+				//$pageUrl = "http" . (($_SERVER['SERVER_PORT']==443) ? "s://" : "://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+				$pageUrl = $_SERVER['REQUEST_URI']
+			?><br />
+			<div class="fb-comments" data-href="<?php echo $pageUrl; ?>" data-colorscheme="light" data-width="470"></div>
+		</td>
+		<td>
 		</td>
 	</tr>
 </table>

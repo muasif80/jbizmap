@@ -13,6 +13,7 @@ class JbizmapViewsDefaultHtml extends JViewHtml{
 		//$this->pagination = $this->get("Pagination");
 // 		JPagination
 
+		//$selected_category = JFactory::getApplication()->input->get("selected_category", "-1");
 		
 		
 		$bizModel = new JbizmapModelsBiz();		
@@ -31,7 +32,20 @@ class JbizmapViewsDefaultHtml extends JViewHtml{
 		
 		$this->id = JFactory::getApplication()->input->get("id");
 		
+		
 // 		$this->pagination->
+
+		/*
+		 * Loading the Business Categories
+		 */
+		$bizCategoryModel = new JbizmapModelsBizcategory();
+		$this->bizCategoryList = $bizCategoryModel->listItems();
+		
+		/*
+		 * Loading the Business Categories
+		*/
+		$bizCityModel = new JbizmapModelsBizcity();
+		$this->bizCityList = $bizCityModel->listItems();
 		
 		$this->addToolBar();
 		return parent::render();

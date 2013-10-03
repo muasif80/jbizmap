@@ -40,8 +40,8 @@ class JbizmapModelsDefault extends JModelBase
     $data = $data ? $data : JRequest::get('post');
 //     JTable::addIncludePath(JPATH_COMPONENT_SITE . "/tables");
     //include_once(JPATH_COMPONENT_SITE . "/tables/biz.php");
-    //$row = JTable::getInstance($data['table'],'Table');
-	$row = JTable::getInstance("biz", "Table");
+    $row = JTable::getInstance($data['table'],'Table');
+	//$row = JTable::getInstance("biz", "Table");
 // 	var_dump($row);
 	//var_dump($row);
     //echo $data['table'] . "[<pre>He - ";
