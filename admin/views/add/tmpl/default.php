@@ -1,4 +1,47 @@
+<style>
+	input.invalid-input{border-color: #E9322D; box-shadow: 0 0 6px #F8B9B7;}
+</style>
 <script type="text/javascript">
+
+<!--
+jQuery(document).ready(function(){
+	//alert("doc ready");
+	jQuery(':input', adminForm ).on("blur", function(){
+		if(this.checkValidity()){
+			this.removeClass("invalid-input");
+		}else{
+			this.addClass("invalid-input");
+		}
+	});
+});
+
+
+Joomla.submitbutton = function(task){
+	//alert('hello');
+	var adminForm = document.getElementById('adminForm');
+	var formValidated = adminForm.checkValidity();
+
+	//jQuery(':input[required]', adminForm ).each( function () {
+	jQuery(':input', adminForm ).each( function () {
+	    //if ( this.value.trim() !== '' ) {
+	    if (this.checkValidity()) {
+	    	this.removeClass("invalid-input");
+	    }else{
+			//this.setBorderColor("#E9322D");
+			this.addClass("invalid-input");
+		}
+	});
+
+	if(formValidated == true){
+		Joomla.submitform(task);
+	}else{
+		//alert(formValidated);
+		//alert("Form data validation failed!");
+	}
+
+	return false;
+};
+-->
 
 function initialize() {
   var mapOptions = {
@@ -50,6 +93,7 @@ window.onload = loadScript;
 	*/
 	
 	$bizName = "";
+	$bizContactName = "";
 	$bizAddress = "";
 	$bizCity = "";
 	$bizState = "";
@@ -63,6 +107,7 @@ window.onload = loadScript;
 	
 	if(isset($itemId) && $itemId != null && isset($this->item)){
 		$bizName = $this->item->bizname;
+		$bizContactName = $this->item->bizcontactname;
 		$bizAddress = $this->item->bizaddress;
 		$bizCity = $this->item->bizcity;
 		$bizState = $this->item->bizstate;
@@ -83,13 +128,16 @@ window.onload = loadScript;
 	
 		<div class="row-fluid">
 				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_BUSINESS_NAME"); ?></label>
-				<input class="span12 input-field" type="text" name="bizname" placeholder="<?php echo JText::_("COM_JBIZMAP_BUSINESS_NAME"); ?>" value="<?php echo $bizName; ?>" />
+				<input class="span12 input-field" type="text" name="bizname" placeholder="<?php echo JText::_("COM_JBIZMAP_BUSINESS_NAME"); ?>" value="<?php echo $bizName; ?>" required="required" />
+				
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_CONTACT_NAME"); ?></label>
+				<input class="span12 input-field" type="text" name="bizcontactname" placeholder="<?php echo JText::_("COM_JBIZMAP_CONTACT_NAME"); ?>" value="<?php echo $bizContactName; ?>"/>
 				
 				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_ADDRESS"); ?></label>
 				<input class="span12 input-field" type="text" name="bizaddress" placeholder="<?php echo JText::_("COM_JBIZMAP_ADDRESS"); ?>" value="<?php echo $bizAddress; ?>" />
 				
 				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_CITY"); ?></label>
-				<input class="span12 input-field" type="text" name="bizcity" placeholder="<?php echo JText::_("COM_JBIZMAP_CITY"); ?>" value="<?php echo $bizCity; ?>" />
+				<input class="span12 input-field" type="text" name="bizcity" placeholder="<?php echo JText::_("COM_JBIZMAP_CITY"); ?>" value="<?php echo $bizCity; ?>" required="required"/>
 				
 				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_STATE_OR_PROVINCE"); ?></label>
 				<input class="span12 input-field" type="text" name="bizstate" placeholder="<?php echo JText::_("COM_JBIZMAP_STATE_OR_PROVINCE"); ?>" value="<?php echo $bizState; ?>" />
@@ -98,16 +146,18 @@ window.onload = loadScript;
 				<input class="span12 input-field" type="text" id="bizPhone" name="bizphone" placeholder="<?php echo JText::_("COM_JBIZMAP_PHONE"); ?>" value="<?php echo $bizPhone; ?>" />
 				
 				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_EMAIL"); ?></label>
-				<input class="span12 input-field" type="text" id="bizEmail" name="bizemail" placeholder="<?php echo JText::_("COM_JBIZMAP_EMAIL"); ?>" value="<?php echo $bizEmail; ?>" />
+				<input class="span12 input-field" type="email" id="bizEmail" name="bizemail" placeholder="<?php echo JText::_("COM_JBIZMAP_EMAIL"); ?>" value="<?php echo $bizEmail; ?>" />
 				
 				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_WEBSITE"); ?></label>
-				<input class="span12 input-field" type="text" id="bizWebsite" name="bizwebsite" placeholder="<?php echo JText::_("COM_JBIZMAP_WEBSITE"); ?>" value="<?php echo $bizWebsite; ?>" />
+				<input class="span12 input-field" type="url" id="bizWebsite" name="bizwebsite" placeholder="<?php echo JText::_("COM_JBIZMAP_WEBSITE"); ?>" value="<?php echo $bizWebsite; ?>" />
 				
 				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_CATEGORY"); ?></label>
-				<input class="span12 input-field" type="text" id="bizCategory" name="bizcategory" placeholder="<?php echo JText::_("COM_JBIZMAP_CATEGORY"); ?>" value="<?php echo $bizCategory; ?>" />
+				<input class="span12 input-field" type="text" id="bizCategory" name="bizcategory" placeholder="<?php echo JText::_("COM_JBIZMAP_CATEGORY"); ?>" value="<?php echo $bizCategory; ?>" required="required" />
 				
 				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_DESCRIPTION"); ?></label>
-				<input class="span12 input-field" type="text" id="bizDescription" name="bizdescription" placeholder="<?php echo JText::_("COM_JBIZMAP_DESCRIPTION"); ?>" value="<?php echo $bizDescription; ?>" />
+				<textarea class="span12 input-field" rows="5" cols="30" id="bizDescription" name="bizdescription" placeholder="<?php echo JText::_("COM_JBIZMAP_DESCRIPTION"); ?>"><?php echo $bizDescription; ?></textarea>
+				
+				
 				
 				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_LOCATION"); ?></label>
 				<input class="span12 input-field" type="text" id="latFld" name="bizloclat" placeholder="Latitude" value="<?php echo $bizLocLat; ?>" />
