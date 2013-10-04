@@ -43,10 +43,10 @@ Joomla.submitbutton = function(task){
 			<thead>
 				<tr>
 					<th></th>
-					<th><?php echo JHTML::_( 'grid.sort', 'Business Name', 'bizname', $this->sortDirection, $this->sortColumn); ?></th>
-	        		<th><?php echo JHTML::_( 'grid.sort', 'Contact Name', 'bizcontactname', $this->sortDirection, $this->sortColumn); ?></th>
-			        <th>Phone</th>
-			        <th>Address</th>
+					<th><?php echo JHTML::_( 'grid.sort',  JText::_('COM_JBIZMAP_BUSINESS_NAME'), 'bizname', $this->sortDirection, $this->sortColumn); ?></th>
+	        		<th><?php echo JHTML::_( 'grid.sort', JText::_('COM_JBIZMAP_CONTACT_NAME'), 'bizcontactname', $this->sortDirection, $this->sortColumn); ?></th>
+			        <th><?php echo JText::_('COM_JBIZMAP_PHONE'); ?></th>
+			        <th><?php echo JText::_('COM_JBIZMAP_ADDRESS'); ?></th>
 	        
 				</tr>
 			</thead>

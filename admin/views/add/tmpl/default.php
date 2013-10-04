@@ -82,34 +82,34 @@ window.onload = loadScript;
 	<form action="index.php" method="post" id="adminForm" name="adminForm">
 	
 		<div class="row-fluid">
-				<label class="field-label">Business Name</label>
-				<input class="span12 input-field" type="text" name="bizname" placeholder="Business Name" value="<?php echo $bizName; ?>" />
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_BUSINESS_NAME"); ?></label>
+				<input class="span12 input-field" type="text" name="bizname" placeholder="<?php echo JText::_("COM_JBIZMAP_BUSINESS_NAME"); ?>" value="<?php echo $bizName; ?>" />
 				
-				<label class="field-label">Business Address</label>
-				<input class="span12 input-field" type="text" name="bizaddress" placeholder="Business Address" value="<?php echo $bizAddress; ?>" />
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_ADDRESS"); ?></label>
+				<input class="span12 input-field" type="text" name="bizaddress" placeholder="<?php echo JText::_("COM_JBIZMAP_ADDRESS"); ?>" value="<?php echo $bizAddress; ?>" />
 				
-				<label class="field-label">City</label>
-				<input class="span12 input-field" type="text" name="bizcity" placeholder="Business City" value="<?php echo $bizCity; ?>" />
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_CITY"); ?></label>
+				<input class="span12 input-field" type="text" name="bizcity" placeholder="<?php echo JText::_("COM_JBIZMAP_CITY"); ?>" value="<?php echo $bizCity; ?>" />
 				
-				<label class="field-label">State/Province</label>
-				<input class="span12 input-field" type="text" name="bizstate" placeholder="Business State" value="<?php echo $bizState; ?>" />
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_STATE_OR_PROVINCE"); ?></label>
+				<input class="span12 input-field" type="text" name="bizstate" placeholder="<?php echo JText::_("COM_JBIZMAP_STATE_OR_PROVINCE"); ?>" value="<?php echo $bizState; ?>" />
 				
-				<label class="field-label">Phone</label>
-				<input class="span12 input-field" type="text" id="bizPhone" name="bizphone" placeholder="Phone" value="<?php echo $bizPhone; ?>" />
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_PHONE"); ?></label>
+				<input class="span12 input-field" type="text" id="bizPhone" name="bizphone" placeholder="<?php echo JText::_("COM_JBIZMAP_PHONE"); ?>" value="<?php echo $bizPhone; ?>" />
 				
-				<label class="field-label">Email</label>
-				<input class="span12 input-field" type="text" id="bizEmail" name="bizemail" placeholder="Email" value="<?php echo $bizEmail; ?>" />
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_EMAIL"); ?></label>
+				<input class="span12 input-field" type="text" id="bizEmail" name="bizemail" placeholder="<?php echo JText::_("COM_JBIZMAP_EMAIL"); ?>" value="<?php echo $bizEmail; ?>" />
 				
-				<label class="field-label">Website</label>
-				<input class="span12 input-field" type="text" id="bizWebsite" name="bizwebsite" placeholder="Website" value="<?php echo $bizWebsite; ?>" />
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_WEBSITE"); ?></label>
+				<input class="span12 input-field" type="text" id="bizWebsite" name="bizwebsite" placeholder="<?php echo JText::_("COM_JBIZMAP_WEBSITE"); ?>" value="<?php echo $bizWebsite; ?>" />
 				
-				<label class="field-label">Category</label>
-				<input class="span12 input-field" type="text" id="bizCategory" name="bizcategory" placeholder="Category" value="<?php echo $bizCategory; ?>" />
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_CATEGORY"); ?></label>
+				<input class="span12 input-field" type="text" id="bizCategory" name="bizcategory" placeholder="<?php echo JText::_("COM_JBIZMAP_CATEGORY"); ?>" value="<?php echo $bizCategory; ?>" />
 				
-				<label class="field-label">Description</label>
-				<input class="span12 input-field" type="text" id="bizDescription" name="bizdescription" placeholder="Description" value="<?php echo $bizDescription; ?>" />
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_DESCRIPTION"); ?></label>
+				<input class="span12 input-field" type="text" id="bizDescription" name="bizdescription" placeholder="<?php echo JText::_("COM_JBIZMAP_DESCRIPTION"); ?>" value="<?php echo $bizDescription; ?>" />
 				
-				<label class="field-label">Location</label>
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_LOCATION"); ?></label>
 				<input class="span12 input-field" type="text" id="latFld" name="bizloclat" placeholder="Latitude" value="<?php echo $bizLocLat; ?>" />
 				<input class="span12 input-field" type="text" id="lngFld" name="bizloclng" placeholder="Longitude" value="<?php echo $bizLocLng; ?>" />
 				

@@ -52,8 +52,35 @@
 			<filename>uninstall.mysql.sql</filename>
 			<filename>jbizmap.php</filename>
 		</files>
+		
+		<languages folder="admin/language">
+			<language tag="en-GB">en-GB/en-GB.com_jbizmap.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_jbizmap.ini</language>
+			<language tag="tr-TR">tr-TR/tr-TR.com_jbizmap.ini</language>
+			<language tag="fr-FR">fr-FR/fr-FR.com_jbizmap.ini</language>
+			<language tag="ar-AA">ar-AA/ar-AA.com_jbizmap.ini</language>
+			<language tag="fa-IR">fa-IR/fa-IR.com_jbizmap.ini</language>
+			<language tag="zh-TW">zh-TW/zh-TW.com_jbizmap.ini</language>
+			<language tag="zh-CN">zh-CN/zh-CN.com_jbizmap.ini</language>
+			<language tag="ja-JP">ja-JP/ja-JP.com_jbizmap.ini</language>
+			<language tag="it-IT">it-IT/it-IT.com_jbizmap.ini</language>
+			<language tag="es-ES">es-ES/es-ES.com_jbizmap.ini</language>
+		</languages>
+		
 	</administration>	
 	
-	
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB/en-GB.com_jbizmap.ini</language>
+		<language tag="de-DE">de-DE/de-DE.com_jbizmap.ini</language>
+		<language tag="tr-TR">tr-TR/tr-TR.com_jbizmap.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.com_jbizmap.ini</language>
+		<language tag="ar-AA">ar-AA/ar-AA.com_jbizmap.ini</language>
+		<language tag="fa-IR">fa-IR/fa-IR.com_jbizmap.ini</language>
+		<language tag="zh-TW">zh-TW/zh-TW.com_jbizmap.ini</language>
+		<language tag="zh-CN">zh-CN/zh-CN.com_jbizmap.ini</language>
+		<language tag="ja-JP">ja-JP/ja-JP.com_jbizmap.ini</language>
+		<language tag="it-IT">it-IT/it-IT.com_jbizmap.ini</language>
+		<language tag="es-ES">es-ES/es-ES.com_jbizmap.ini</language>
+	</languages>
 	
 </extension>
