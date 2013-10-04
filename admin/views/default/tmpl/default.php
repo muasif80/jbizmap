@@ -79,98 +79,101 @@ Joomla.submitbutton = function(task, id){
 <?php $limitStart = isset($_REQUEST['limitstart']) ? $_REQUEST['limitstart'] : 0; ?>
 
 
-<select id="ddlCategory" name="ddlCategory" onchange="Joomla.submitbutton('filter_by_category');">
-	<!-- This select box should be loaded by the categories present in the biz table -->
-	<option value="">Select Category</option>
-	<?php 
-		foreach($this->bizCategoryList as $bizCategory){
-			if($bizCategory->bizcategory == $selected_category){
-	?>
-			<option value="<?php echo $bizCategory->bizcategory; ?>" selected="selected"><?php echo $bizCategory->bizcategory; ?></option>
-	<?php
-			}else{
-	?>
-			<option value="<?php echo $bizCategory->bizcategory; ?>" ><?php echo $bizCategory->bizcategory; ?></option>
-	<?php 
-			} 
-		}
-	?>
-</select>
+<div id="view-default-default">
 
-<select id="ddlCity" name="ddlCity" onchange="Joomla.submitbutton('filter_by_city');">
-	<!-- This select box should be loaded by the categories present in the biz table -->
-	<option value="">Select City</option>
-	<?php 
-		foreach($this->bizCityList as $bizCity){
-			if($bizCity->bizcity == $selected_city){
-	?>
-			<option value="<?php echo $bizCity->bizcity; ?>" selected="selected"><?php echo $bizCity->bizcity; ?></option>
-	<?php
-			}else{
-	?>
-			<option value="<?php echo $bizCity->bizcity; ?>"><?php echo $bizCity->bizcity; ?></option>
-	<?php
+	<select id="ddlCategory" name="ddlCategory" onchange="Joomla.submitbutton('filter_by_category');">
+		<!-- This select box should be loaded by the categories present in the biz table -->
+		<option value="">Select Category</option>
+		<?php 
+			foreach($this->bizCategoryList as $bizCategory){
+				if($bizCategory->bizcategory == $selected_category){
+		?>
+				<option value="<?php echo $bizCategory->bizcategory; ?>" selected="selected"><?php echo $bizCategory->bizcategory; ?></option>
+		<?php
+				}else{
+		?>
+				<option value="<?php echo $bizCategory->bizcategory; ?>" ><?php echo $bizCategory->bizcategory; ?></option>
+		<?php 
+				} 
 			}
-		}
+		?>
+	</select>
+	
+	<select id="ddlCity" name="ddlCity" onchange="Joomla.submitbutton('filter_by_city');">
+		<!-- This select box should be loaded by the categories present in the biz table -->
+		<option value="">Select City</option>
+		<?php 
+			foreach($this->bizCityList as $bizCity){
+				if($bizCity->bizcity == $selected_city){
+		?>
+				<option value="<?php echo $bizCity->bizcity; ?>" selected="selected"><?php echo $bizCity->bizcity; ?></option>
+		<?php
+				}else{
+		?>
+				<option value="<?php echo $bizCity->bizcity; ?>"><?php echo $bizCity->bizcity; ?></option>
+		<?php
+				}
+			}
+		?>
+	</select>
+	
+	<form action="index.php" method="post" id="adminForm" name="adminForm">
+	
+		<table cellpadding="0" cellspacing="0" width="100%" class="table table-striped tbl-bizlist">
+			<thead>
+				<tr>
+					<th></th>
+					<th><?php echo JHTML::_( 'grid.sort', 'Business Name', 'bizname', $this->sortDirection, $this->sortColumn); ?></th>
+	        		<th><?php echo JHTML::_( 'grid.sort', 'Contact Name', 'bizcontactname', $this->sortDirection, $this->sortColumn); ?></th>
+			        <th>Phone</th>
+			        <th>Address</th>
+	        
+				</tr>
+			</thead>
+			<tbody>
+				<?php for($i=0, $n = count($this->bizlist); $i<$n; $i++) { 
+				        $biz = $this->bizlist[$i];
+				?>
+						<tr>
+							<td style="width: 1%;">
+								<?php echo JHtml::_('grid.id', $i, $biz->biz_id); ?>
+							</td>
+		
+							<td>
+								<a href="<?php echo JRoute::_('index.php?option=com_jbizmap&view=biz&task=bizdetail&id=' . (int) $biz->biz_id . '&limitstart=' . $limitStart); ?>">
+									<?php echo $biz->bizname; ?>
+								</a>
+								
+							</td>
+							<td><?php echo $biz->bizcontactname; ?></td>
+							<td><?php echo $biz->bizphone; ?></td>
+							<td><?php echo $biz->bizaddress; ?></td>
+							<td>
+								<input class="span12 input-field" type="button" value="Edit" onclick="Joomla.submitbutton('editBiz', <?php echo $biz->biz_id?>)" />
+							</td>
+						</tr>
+				<?php
+				} ?>
+			</tbody>
+		</table>
+	
+		<input type="hidden" name="boxchecked" value="0" />
+		<input type="hidden" name="option" value="com_jbizmap" />
+		<input type="hidden" name="controller" value="display" />
+		<input type="hidden" name="task" value="" />
+		<input type="hidden" name="view" value="default" />
+		<input type="hidden" name="id" value="" />
+		
+		
+		<input type="hidden" name="filter_order" value="<?php echo $this->sortColumn; ?>" />
+		<input type="hidden" name="filter_order_Dir" value="<?php echo $this->sortDirection; ?>" />
+		
+		<input type="hidden" name="selected_category" value="" />
+		<input type="hidden" name="selected_city" value="" />
+	
+	<?php
+	echo $this->pagination->getListFooter();
 	?>
-</select>
-
-<form action="index.php" method="post" id="adminForm" name="adminForm">
-
-	<table cellpadding="0" cellspacing="0" width="100%" class="table table-striped">
-		<thead>
-			<tr>
-				<th></th>
-				<th><?php echo JHTML::_( 'grid.sort', 'Business Name', 'bizname', $this->sortDirection, $this->sortColumn); ?></th>
-        		<th><?php echo JHTML::_( 'grid.sort', 'Contact Name', 'bizcontactname', $this->sortDirection, $this->sortColumn); ?></th>
-		        <th>Phone</th>
-		        <th>Address</th>
-        
-			</tr>
-		</thead>
-		<tbody id="biz-list">
-			<?php for($i=0, $n = count($this->bizlist); $i<$n; $i++) { 
-			        $biz = $this->bizlist[$i];
-			?>
-					<tr>
-						<td style="width: 1%;">
-							<?php echo JHtml::_('grid.id', $i, $biz->biz_id); ?>
-						</td>
 	
-						<td>
-							<a href="<?php echo JRoute::_('index.php?option=com_jbizmap&view=biz&task=bizdetail&id=' . (int) $biz->biz_id . '&limitstart=' . $limitStart); ?>">
-								<?php echo $biz->bizname; ?>
-							</a>
-							
-						</td>
-						<td><?php echo $biz->bizcontactname; ?></td>
-						<td><?php echo $biz->bizphone; ?></td>
-						<td><?php echo $biz->bizaddress; ?></td>
-						<td>
-							<input type="button" value="Edit" onclick="Joomla.submitbutton('editBiz', <?php echo $biz->biz_id?>)" />
-						</td>
-					</tr>
-			<?php
-			} ?>
-		</tbody>
-	</table>
-
-	<input type="hidden" name="boxchecked" value="0" />
-	<input type="hidden" name="option" value="com_jbizmap" />
-	<input type="hidden" name="controller" value="display" />
-	<input type="hidden" name="task" value="" />
-	<input type="hidden" name="view" value="default" />
-	<input type="hidden" name="id" value="" />
-	
-	
-	<input type="hidden" name="filter_order" value="<?php echo $this->sortColumn; ?>" />
-	<input type="hidden" name="filter_order_Dir" value="<?php echo $this->sortDirection; ?>" />
-	
-	<input type="hidden" name="selected_category" value="" />
-	<input type="hidden" name="selected_city" value="" />
-
-<?php
-echo $this->pagination->getListFooter();
-?>
-
-</form>
+	</form>
+</div>

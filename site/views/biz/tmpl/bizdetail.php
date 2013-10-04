@@ -67,64 +67,66 @@ window.onload = loadScript;
 
 <?php $limitStart = isset($_REQUEST['limitstart']) ? $_REQUEST['limitstart'] : 0; ?>
 
-<a href="<?php echo JRoute::_('index.php?option=com_jbizmap&view=default&limitstart=' . $limitStart); ?>">Show List</a>
 
-
-<h2><?php echo $biz->bizname; ?></h2>
-
-<table class="table">
-	<tr>
-		<td style="width: 40%;">
-			<table class="table table-striped" style="width: 100%;">
-				<tr>
-					<th>Contact Name</th>
-					<td><?php echo $biz->bizcontactname; ?></td>
-				</tr>
-				<tr>
-					<th>Location</th>
-					<td><?php echo $biz->bizloclat . ", " . $biz->bizloclng; ?></td>
-				</tr>
-				<tr>
-					<th>Address</th>
-					<td><?php echo $biz->bizaddress; ?></td>
-				</tr>
-				<tr>
-					<th>Phone</th>
-					<td><?php echo $biz->bizphone; ?></td>
-				</tr>
-				<tr>
-					<th>Email</th>
-					<td><?php echo $biz->bizemail; ?></td>
-				</tr>
-				<tr>
-					<th>Category</th>
-					<td><?php echo $biz->bizcategory; ?></td>
-				</tr>
-				<tr>
-					<th>Description</th>
-					<td><?php echo $biz->bizdescription; ?></td>
-				</tr>
-			</table>
-		</td>
-		<td style="width: 60%;">
-			<div class="map-wrapper" style="width: 100%; height: 400px; border: solid thick #CCDDCC;">
-				<div id="map-canvas" style="width: 100%; height: 100%;">
+<div id="view-biz-bizdetail">
+	<a href="<?php echo JRoute::_('index.php?option=com_jbizmap&view=default&limitstart=' . $limitStart); ?>">Show List</a>
+	
+	
+	<h2><?php echo $biz->bizname; ?></h2>
+	
+	<table class="table">
+		<tr>
+			<td style="width: 40%;" id="td-bizdetail">
+				<table class="table table-striped tbl-bizdetail" style="width: 100%;">
+					<tr>
+						<th>Contact Name</th>
+						<td><?php echo $biz->bizcontactname; ?></td>
+					</tr>
+					<tr>
+						<th>Location</th>
+						<td><?php echo $biz->bizloclat . ", " . $biz->bizloclng; ?></td>
+					</tr>
+					<tr>
+						<th>Address</th>
+						<td><?php echo $biz->bizaddress; ?></td>
+					</tr>
+					<tr>
+						<th>Phone</th>
+						<td><?php echo $biz->bizphone; ?></td>
+					</tr>
+					<tr>
+						<th>Email</th>
+						<td><?php echo $biz->bizemail; ?></td>
+					</tr>
+					<tr>
+						<th>Category</th>
+						<td><?php echo $biz->bizcategory; ?></td>
+					</tr>
+					<tr>
+						<th>Description</th>
+						<td><?php echo $biz->bizdescription; ?></td>
+					</tr>
+				</table>
+			</td>
+			<td style="width: 60%;" id="td-map">
+				<div class="map-wrapper" style="width: 100%; height: 400px; border: solid thick #CCDDCC;">
+					<div id="map-canvas" style="width: 100%; height: 100%;">
+					</div>
 				</div>
-			</div>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<?php 
-				//$pageUrl = "http" . (($_SERVER['SERVER_PORT']==443) ? "s://" : "://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-				$pageUrl = $_SERVER['REQUEST_URI']
-			?><br />
-			<div class="fb-comments" data-href="<?php echo $pageUrl; ?>" data-colorscheme="light" data-width="470"></div>
-		</td>
-		<td>
-		</td>
-	</tr>
-</table>
-
-
-
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" id="td-fb-comments">
+				<?php 
+					//$pageUrl = "http" . (($_SERVER['SERVER_PORT']==443) ? "s://" : "://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+					$pageUrl = $_SERVER['REQUEST_URI']
+				?><br />
+				<div class="fb-comments" data-href="<?php echo $pageUrl; ?>" data-colorscheme="light" data-width="470"></div>
+			</td>
+			<td>
+			</td>
+		</tr>
+	</table>
+</div>	
+	
+	

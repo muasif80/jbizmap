@@ -5,6 +5,10 @@
 
 <?php 
 
+$document = &JFactory::getDocument();
+//$document->addStyleSheet('components'.DS.'com_xyz'.DS.'css'.DS.'xyz.css');
+$document->addStyleSheet("components/com_jbizmap/css/jbizmap.css");
+
 // echo "-1";
 // Load Classes
 //JLoader::registerPrefix("Jbizmap", JPATH_COMPONENT_ADMINISTRATOR);

@@ -77,57 +77,59 @@ window.onload = loadScript;
 	}
 ?>
 
-<form action="index.php" method="post" id="adminForm" name="adminForm">
+<div id="view-add-default">
 
-	<div class="row-fluid">
-			<label>Business Name</label>
-			<input class="span12" type="text" name="bizname" placeholder="Business Name" value="<?php echo $bizName; ?>" />
-			
-			<label>Business Address</label>
-			<input class="span12" type="text" name="bizaddress" placeholder="Business Address" value="<?php echo $bizAddress; ?>" />
-			
-			<label>City</label>
-			<input class="span12" type="text" name="bizcity" placeholder="Business City" value="<?php echo $bizCity; ?>" />
-			
-			<label>State/Province</label>
-			<input class="span12" type="text" name="bizstate" placeholder="Business State" value="<?php echo $bizState; ?>" />
-			
-			<label>Phone</label>
-			<input class="span12" type="text" id="bizPhone" name="bizphone" placeholder="Phone" value="<?php echo $bizPhone; ?>" />
-			
-			<label>Email</label>
-			<input class="span12" type="text" id="bizEmail" name="bizemail" placeholder="Email" value="<?php echo $bizEmail; ?>" />
-			
-			<label>Website</label>
-			<input class="span12" type="text" id="bizWebsite" name="bizwebsite" placeholder="Website" value="<?php echo $bizWebsite; ?>" />
-			
-			<label>Category</label>
-			<input class="span12" type="text" id="bizCategory" name="bizcategory" placeholder="Category" value="<?php echo $bizCategory; ?>" />
-			
-			<label>Description</label>
-			<input class="span12" type="text" id="bizDescription" name="bizdescription" placeholder="Description" value="<?php echo $bizDescription; ?>" />
-			
-			<label>Location</label>
-			<input class="span12" type="text" id="latFld" name="bizloclat" placeholder="Latitude" value="<?php echo $bizLocLat; ?>" />
-			<input class="span12" type="text" id="lngFld" name="bizloclng" placeholder="Longitude" value="<?php echo $bizLocLng; ?>" />
-			
-	</div>
+	<form action="index.php" method="post" id="adminForm" name="adminForm">
 	
-	<h2>Map: Locate the Business on Map</h2>
-	<div class="map-wrapper" style="width: 100%; height: 400px; border: solid thick #CCDDCC;">
-		<div id="map-canvas" style="width: 100%; height: 100%;">
+		<div class="row-fluid">
+				<label class="field-label">Business Name</label>
+				<input class="span12 input-field" type="text" name="bizname" placeholder="Business Name" value="<?php echo $bizName; ?>" />
+				
+				<label class="field-label">Business Address</label>
+				<input class="span12 input-field" type="text" name="bizaddress" placeholder="Business Address" value="<?php echo $bizAddress; ?>" />
+				
+				<label class="field-label">City</label>
+				<input class="span12 input-field" type="text" name="bizcity" placeholder="Business City" value="<?php echo $bizCity; ?>" />
+				
+				<label class="field-label">State/Province</label>
+				<input class="span12 input-field" type="text" name="bizstate" placeholder="Business State" value="<?php echo $bizState; ?>" />
+				
+				<label class="field-label">Phone</label>
+				<input class="span12 input-field" type="text" id="bizPhone" name="bizphone" placeholder="Phone" value="<?php echo $bizPhone; ?>" />
+				
+				<label class="field-label">Email</label>
+				<input class="span12 input-field" type="text" id="bizEmail" name="bizemail" placeholder="Email" value="<?php echo $bizEmail; ?>" />
+				
+				<label class="field-label">Website</label>
+				<input class="span12 input-field" type="text" id="bizWebsite" name="bizwebsite" placeholder="Website" value="<?php echo $bizWebsite; ?>" />
+				
+				<label class="field-label">Category</label>
+				<input class="span12 input-field" type="text" id="bizCategory" name="bizcategory" placeholder="Category" value="<?php echo $bizCategory; ?>" />
+				
+				<label class="field-label">Description</label>
+				<input class="span12 input-field" type="text" id="bizDescription" name="bizdescription" placeholder="Description" value="<?php echo $bizDescription; ?>" />
+				
+				<label class="field-label">Location</label>
+				<input class="span12 input-field" type="text" id="latFld" name="bizloclat" placeholder="Latitude" value="<?php echo $bizLocLat; ?>" />
+				<input class="span12 input-field" type="text" id="lngFld" name="bizloclng" placeholder="Longitude" value="<?php echo $bizLocLng; ?>" />
+				
 		</div>
-	</div>
-	
-	<input type="hidden" name="option" value="com_jbizmap" />
-	<input type="hidden" name="controller" value="add" />
-	<input type="hidden" name="task" value="save" />
-	<input type="hidden" name="table" value="biz" />
-	<input type="hidden" name="view" value="add" />
-	
-	<?php if(isset($itemId) && $itemId != null){ ?>
-	<input type="hidden" name="biz_id" value="<?php echo $itemId; ?>" />
-	<?php } ?>
-	
-</form>
-	
+		
+		<h2>Map: Locate the Business on Map</h2>
+		<div class="map-wrapper" style="width: 100%; height: 400px; border: solid thick #CCDDCC;">
+			<div id="map-canvas" style="width: 100%; height: 100%;">
+			</div>
+		</div>
+		
+		<input type="hidden" name="option" value="com_jbizmap" />
+		<input type="hidden" name="controller" value="add" />
+		<input type="hidden" name="task" value="save" />
+		<input type="hidden" name="table" value="biz" />
+		<input type="hidden" name="view" value="add" />
+		
+		<?php if(isset($itemId) && $itemId != null){ ?>
+		<input type="hidden" name="biz_id" value="<?php echo $itemId; ?>" />
+		<?php } ?>
+		
+	</form>
+</div>

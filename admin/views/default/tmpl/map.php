@@ -107,22 +107,23 @@ var markers = <?php echo $markers1; ?>;
 //-->
 </script>
 
-
-<form action="index.php" method="post" id="adminForm" name="adminForm">
-
-	<h2>Map: Locate the Business on Map</h2>
-	<div class="map-wrapper" style="width: 100%; height: 550px; border: solid thick #CCDDCC;">
-		<div id="map-canvas" style="width: 100%; height: 100%;">
+<div id="view-default-map">
+	<form action="index.php" method="post" id="adminForm" name="adminForm">
+	
+		<h2>Map: Locate the Business on Map</h2>
+		<div class="map-wrapper" style="width: 100%; height: 550px; border: solid thick #CCDDCC;">
+			<div id="map-canvas" style="width: 100%; height: 100%;">
+			</div>
 		</div>
-	</div>
+		
+		<input class="span12 input-field" type="button" name="btnShowList" value="Show List" onclick="Joomla.submitbutton('showlist')" />
 	
-	<input type="button" name="btnShowList" value="Show List" onclick="Joomla.submitbutton('showlist')" />
-
-	<input type="hidden" name="option" value="com_jbizmap" />
-	<input type="hidden" name="controller" value="" />
-	<input type="hidden" name="task" value="" />
-	<input type="hidden" name="view" value="default" />
+		<input type="hidden" name="option" value="com_jbizmap" />
+		<input type="hidden" name="controller" value="" />
+		<input type="hidden" name="task" value="" />
+		<input type="hidden" name="view" value="default" />
+		
+		<input type="hidden" name="limitstart" value="<?php echo isset($_REQUEST['limitstart']) ? $_REQUEST['limitstart'] : 0; ?>" />
 	
-	<input type="hidden" name="limitstart" value="<?php echo isset($_REQUEST['limitstart']) ? $_REQUEST['limitstart'] : 0; ?>" />
-
-</form>
+	</form>
+</div>
