@@ -30,7 +30,7 @@ Joomla.submitbutton = function(task){
 	<form action="index.php" method="post" id="adminForm" name="adminForm" enctype="multipart/form-data">
 	
 		<div class="row-fluid">
-				<label class="field-label">Upload File</label>
+				<label class="field-label"><?php echo JText::_("COM_JBIZMAP_UPLOAD_FILE"); ?></label>
 				<input class="span12 input-field" type="file" name="bizFile" placeholder="Upload excel file for businesses" />
 		</div>
 		
@@ -39,8 +39,8 @@ Joomla.submitbutton = function(task){
 			<thead>
 				<tr>
 					<th></th>
-					<th>S. No.</th>
-					<th><?php echo JHTML::_( 'grid.sort', 'Businesses File Name', 'biz_file_name', 'asc', 'biz_file_name'); ?></th>
+					<th><?php echo JText::_("COM_JBIZMAP_SERIAL_NUMBER"); ?></th>
+					<th><?php echo JHTML::_( 'grid.sort', JText::_("COM_JBIZMAP_BUSINESS_FILE_NAME"), 'biz_file_name', 'asc', 'biz_file_name'); ?></th>
 				</tr>
 			</thead>
 			<tbody>

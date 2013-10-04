@@ -63,31 +63,31 @@ window.onload = loadScript;
 			<td style="width: 40%;" class="td-bizdetail">
 				<table class="table table-striped tbl-bizdetail" style="width: 100%;">
 					<tr>
-						<th>Contact Name</th>
+						<th><?php echo JText::_("COM_JBIZMAP_CONTACT_NAME"); ?></th>
 						<td><?php echo $biz->bizcontactname; ?></td>
 					</tr>
 					<tr>
-						<th>Location</th>
+						<th><?php echo JText::_("COM_JBIZMAP_LOCATION"); ?></th>
 						<td><?php echo $biz->bizloclat . ", " . $biz->bizloclng; ?></td>
 					</tr>
 					<tr>
-						<th>Address</th>
+						<th><?php echo JText::_("COM_JBIZMAP_ADDRESS"); ?></th>
 						<td><?php echo $biz->bizaddress; ?></td>
 					</tr>
 					<tr>
-						<th>Phone</th>
+						<th><?php echo JText::_("COM_JBIZMAP_PHONE"); ?></th>
 						<td><?php echo $biz->bizphone; ?></td>
 					</tr>
 					<tr>
-						<th>Email</th>
+						<th><?php echo JText::_("COM_JBIZMAP_EMAIL"); ?></th>
 						<td><?php echo $biz->bizemail; ?></td>
 					</tr>
 					<tr>
-						<th>Category</th>
+						<th><?php echo JText::_("COM_JBIZMAP_CATEGORY"); ?></th>
 						<td><?php echo $biz->bizcategory; ?></td>
 					</tr>
 					<tr>
-						<th>Description</th>
+						<th><?php echo JText::_("COM_JBIZMAP_DESCRIPTION"); ?></th>
 						<td><?php echo $biz->bizdescription; ?></td>
 					</tr>
 				</table>
