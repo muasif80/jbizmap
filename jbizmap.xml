@@ -55,6 +55,8 @@
 		
 		<languages folder="admin/language">
 			<language tag="en-GB">en-GB/en-GB.com_jbizmap.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jbizmap.sys.ini</language>
+			
 			<language tag="de-DE">de-DE/de-DE.com_jbizmap.ini</language>
 			<language tag="tr-TR">tr-TR/tr-TR.com_jbizmap.ini</language>
 			<language tag="fr-FR">fr-FR/fr-FR.com_jbizmap.ini</language>
