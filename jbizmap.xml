@@ -7,7 +7,7 @@
 	<authorUrl>mayotitech@gmail.com</authorUrl>
 	<creationDate>2013-08-31</creationDate>
 	<copyright>2013 Mayotitech</copyright>
-	<license>gpl 3.0</license>
+	<license>gpl v3.0 or later</license>
 	<version>1.0.0</version>
 	<description>Its a component for displaying businesses on a map.</description>
 	

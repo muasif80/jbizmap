@@ -1,9 +1,14 @@
-<!-- AIzaSyBM1dSFkcywmp5yyHPiASm4yGBjO1LzvEs -->
-<!-- AIzaSyAMHb77EGZrdSHwgK5gKdgo4C10L-Rjb_Y -->
-
-
-
-<?php 
+<?php
+/**
+ *
+ * @copyright   Copyright (C) 2013 & later Mayotitech. All rights reserved.
+ * @license     GNU General Public License version 3 or later; see LICENSE
+ */
+//<!-- AIzaSyBM1dSFkcywmp5yyHPiASm4yGBjO1LzvEs -->
+//<!-- AIzaSyAMHb77EGZrdSHwgK5gKdgo4C10L-Rjb_Y -->
+ 
+// no direct access
+defined('_JEXEC') or die('Restricted access');
 
 $document = &JFactory::getDocument();
 //$document->addStyleSheet('components'.DS.'com_xyz'.DS.'css'.DS.'xyz.css');

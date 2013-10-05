@@ -1,6 +1,10 @@
-<?php // no direct access
-ini_set("display_errors", "1");
-
+<?php 
+/**
+ *
+ * @copyright   Copyright (C) 2013 & later Mayotitech. All rights reserved.
+ * @license     GNU General Public License version 3 or later; see LICENSE
+ */
+// no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' ); 
 
 //define("view", "_view");

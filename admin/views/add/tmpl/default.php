@@ -1,3 +1,13 @@
+<?php
+/**
+ *
+ * @copyright   Copyright (C) 2013 & later Mayotitech. All rights reserved.
+ * @license     GNU General Public License version 3 or later; see LICENSE
+ */ 
+	// no direct access
+	defined('_JEXEC') or die('Restricted access');
+?>
+
 <style>
 	input.invalid-input{border-color: #E9322D; box-shadow: 0 0 6px #F8B9B7;}
 </style>

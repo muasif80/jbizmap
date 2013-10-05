@@ -1,4 +1,10 @@
 <?php
+/**
+ *
+ * @copyright   Copyright (C) 2013 & later Mayotitech. All rights reserved.
+ * @license     GNU General Public License version 3 or later; see LICENSE
+ */
+	defined('_JEXEC') or die('Restricted access');
 
 	class JbizmapControllersAdd extends JControllerBase {
 		

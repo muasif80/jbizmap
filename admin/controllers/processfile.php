@@ -1,5 +1,11 @@
 <?php
-
+/**
+ *
+ * @copyright   Copyright (C) 2013 & later Mayotitech. All rights reserved.
+ * @license     GNU General Public License version 3 or later; see LICENSE
+ */
+	defined('_JEXEC') or die('Restricted access');
+	
 	jimport("phpexcel.library.PHPExcel");
 	
 	class JbizmapControllersProcessfile extends JControllerBase {
